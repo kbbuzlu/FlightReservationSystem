@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="650.0" style="-fx-background-color: SILVER;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="flightreservationsystem.GUI.UcusYonetimController">
+   <children>
+      <GridPane hgap="10.0" layoutX="24.0" layoutY="77.0" prefHeight="191.0" prefWidth="602.0" vgap="10.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Varış Zamanı:" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Kalkış Zamanı:" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="17.0" prefWidth="109.0" text="Uçuş Numarası:">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="17.0" prefWidth="87.0" text="Hava Yolu:" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label prefHeight="17.0" prefWidth="81.0" text="Kalkış Yeri:" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label prefHeight="17.0" prefWidth="74.0" text="Varış Yeri:" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label prefHeight="17.0" prefWidth="82.0" text="Tarih:" GridPane.columnIndex="2">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="Bilet Taban Fiyatı:" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="tf_ucusNumarasi" GridPane.columnIndex="1" />
+            <TextField fx:id="tf_havaYolu" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="tf_kalkisYeri" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="tf_varisYeri" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="tf_tarih" GridPane.columnIndex="3" />
+            <TextField fx:id="tf_kalkisZamani" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="tf_varisZamani" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <TextField fx:id="tf_biletFiyat" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <HBox alignment="CENTER" layoutX="4.0" layoutY="289.0" prefHeight="44.0" prefWidth="643.0" spacing="20.0">
+         <children>
+            <Button fx:id="btn_ucuslar" mnemonicParsing="false" onAction="#loadFlights" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: b22222;" text="Uçuşlar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_ekle" mnemonicParsing="false" onAction="#addFlight" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: b22222;" text="Ekle" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_sil" mnemonicParsing="false" onAction="#deleteFlight" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: b22222;" text="Sil" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_degistir" mnemonicParsing="false" onAction="#updateFlight" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: b22222;" text="Rötar Ata" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_ara" mnemonicParsing="false" onAction="#searchFlight" prefHeight="27.0" prefWidth="81.0" style="-fx-background-color: b22222;" text="Rötarı Sil" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btn_anaMenu" mnemonicParsing="false" onAction="#openMenu" prefHeight="27.0" prefWidth="83.0" style="-fx-background-color: b22222;" text="Ana Menü" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Label layoutX="186.0" layoutY="14.0" prefHeight="44.0" prefWidth="279.0" text="Uçuş Yönetimi" textFill="FIREBRICK">
+         <font>
+            <Font name="System Bold" size="36.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tb_view" layoutX="10.0" layoutY="348.0" prefHeight="250.0" prefWidth="630.0">
+         <columns>
+            <TableColumn fx:id="flight_number" prefWidth="78.0" text="Uçuş No" />
+            <TableColumn fx:id="date_str" prefWidth="74.0" text="Tarih" />
+            <TableColumn fx:id="departure" prefWidth="100.0" text="Kalkış Y." />
+            <TableColumn fx:id="arrival" prefWidth="99.0" text="Varış Y." />
+            <TableColumn fx:id="ticket_price" prefWidth="74.0" text="Bilet Fiyat" />
+            <TableColumn fx:id="airline" prefWidth="73.0" text="Hava Yolu" />
+            <TableColumn fx:id="departure_time_str" prefWidth="66.0" text="Kalkış" />
+            <TableColumn fx:id="arrival_time_str" prefWidth="65.0" text="Varış" />
+         </columns></TableView>
+   </children>
+</AnchorPane>
